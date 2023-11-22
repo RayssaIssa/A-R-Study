@@ -1,0 +1,200 @@
+:root {
+  --white-color: #fff;
+  --quase-branco: #e7f2fd;
+  --blue-color: #4070f4;
+  --grey-color: #707070;
+  --grey-color-light: #aaa;
+  --letra: #242424;
+  --sombra: rgba(0, 0, 0, .15);
+}
+body.dark {
+  --white-color: #333;
+  --quase-branco: #e7f2fd
+  --blue-color: #fff;
+  --grey-color: #f2f2f2;
+  --grey-color-light: #aaa;
+  --letra: #fff;
+  --sombra: #f2f2f26c;
+}
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0; 
+}
+/*-- Modal de anotação --*/
+.modal-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--blue-color);
+  color: white;
+  font-size: 24px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.modal {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+.modal.show {
+  display: block;
+}
+.fechar {
+  font-size: 20px;
+  color: var(--letra);
+  padding: 0px;
+  float: right;
+  cursor: pointer;
+}
+.col-auto{
+  display: inline-block;
+  color: var(--letra);
+}
+/*   Design das notas  */
+.form-notas{
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--white-color);
+  max-width: 370px;
+  box-shadow: 0 0 30px var(--sombra);
+  overflow: hidden;
+}
+.form-notas input[type="text"]{
+  outline: none;
+  border-bottom: 1px solid var(--grey-color);
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding-bottom: 5px;
+  font-weight: 800;
+  font-size: 18px;
+  background-color: transparent;
+  color: var(--letra);
+}
+.form-notas input[type="text"]::placeholder,
+.form-notas textarea::placeholder{
+  color: var(--grey-color);
+}
+.form-notas textarea {
+  resize: none;
+  padding: 5px;
+  outline: none;
+  width: 100%;
+  font-weight: 300;
+  color: var(--letra);
+  background-color: transparent; 
+}
+.form-notas button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 6px 24px;
+  border: 2px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.form-notas .follow,
+.form-notas .view:hover {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+.form-notas .view,
+.form-notas .follow:hover{
+  background-color: var(--white-color);
+  color: var(--blue-color);
+}
+.form-notas button:hover{
+  background-color: #2a57d4;
+  transition: 0.7s;
+}
+@media screen and (max-width: 435px) {
+  .form-notas{
+    max-width: 230px;
+  }
+}
+/*---------------------*/
+.botaon{
+  cursor: pointer;
+}
+.note h1{
+  text-align: center;
+  color: var(--blue-color);
+  font-size: 25px;
+}
+.anotacoes{
+  display: inline-block;
+}
+.anotacoes .cardy {
+  padding: 1em;
+  background-color: var(--white-color);
+  border-radius: 1em !important;
+  width: 20em;
+  margin: 25px 20px;
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 10px 15px 0px var(--sombra); 
+}
+.anotacoes .cardy input[type="text"] {
+  outline: none;
+  border-bottom: 1px solid var(--grey-color);
+  width: 100%;
+  margin-bottom: 0.5em;
+  color: var(--letra);
+  padding-bottom: 5px;
+  font-weight: 800;
+  background-color: transparent; 
+}
+.anotacoes .cardy textarea {
+  resize: vertical;
+  padding: 5px;
+  outline: none;
+  width: 100%;
+  font-weight: 300;
+  color: var(--letra);
+  background-color: transparent; 
+}
+.anotacoes .cardy button {
+  display: block;
+  width: 100%;
+  margin-top: 10px; 
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  border-radius: 10px;
+  height: 20px;
+}
+.cardy-body {
+  padding: 0; 
+}
+#notas-importantes .titlee,
+#notas-restantes .titlee{
+  font-size: 20px;
+  margin: 20px 10px 5px 20px;
+  color: var(--letra);
+}
+@media screen and (max-width: 600px) {
+  #notas-importantes .cardy-group,
+  #notas-restantes .cardy-group {
+      margin: 0 auto; 
+    } 
+}
+.excluir-notas{
+  width: 350px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: 10px;
+  margin: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+}

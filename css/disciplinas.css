@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+    --white-color: #fff;
+    --blue-color: #4070f4;
+    --grey-color: #707070;
+    --grey-color-light: #aaa;
+  }
+  body.dark {
+    --white-color: #333;
+    --blue-color: #fff;
+    --grey-color: #f2f2f2;
+    --grey-color-light: #aaa;
+  }
+.home-section{
+  margin-top: 70px;
+}
+/* cards de conteudos das disciplinas */
+.conteudos{
+  margin: 10px 15px;
+}
+.conteudos h1{
+  color: var(--blue-color);
+}
+.conteudos span{
+  color: var(--grey-color);
+  font-size: 18px;
+}
+.cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1090px;
+  margin: 0 auto;
+}
+.cardConteudo {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--grey-color-light);
+  margin: 10px 15px;
+  padding: 15px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.cont a{
+  text-decoration: none;
+  cursor: pointer;
+}
+.cardConteudo img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+.cardConteudo p {
+  color: var(--grey-color);
+  margin: 0;
+  font-size: 20px;
+}
+.cardConteudo h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+.anterior a{
+  text-decoration: none;
+}

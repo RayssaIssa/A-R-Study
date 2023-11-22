@@ -1,0 +1,134 @@
+:root {
+    --white-color: #fff;
+    --quase-branco: #e7f2fd;
+    --blue-color: #4070f4;
+    --grey-color: #707070;
+    --grey-color-light: #aaa;
+    --letra: #242424;
+    --sombra: rgba(0, 0, 0, .15);
+}
+body.dark {
+    --white-color: #333;
+    --quase-branco: #e7f2fd
+    --blue-color: #fff;
+    --grey-color: #f2f2f2;
+    --grey-color-light: #aaa;
+    --letra: #fff;
+    --sombra: #f2f2f26c;
+}
+.home .carousel-item{
+	min-height: 92vh;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+.home .carousel-item:before{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.171);
+	z-index: -1;
+}
+.home .carousel-item .container{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.home .carousel-item h2{
+	font-size: 60px;
+	color: #fff;
+	margin:0 0 10px;
+	opacity: 0;
+}
+.home .carousel-item p{
+	font-size: 23px;
+	margin:0;
+	color: #fff;
+	opacity:0;
+}
+.home .carousel-item.active h2{
+	animation: fadeInLeft 0.5s ease forwards;
+}
+.home .carousel-item.active p{
+	animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft{
+	0%{
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+@keyframes fadeInRight{
+	0%{
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+.home .carousel-controls{
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+	z-index: 10;
+	transform: translateX(-50%);
+}
+.home .carousel-indicators{
+	position: relative;
+	margin:0;
+}
+.home .carousel-indicators li.active{
+	transform: scale(1.2);
+}
+.home .carousel-control-next, 
+.home .carousel-control-prev{
+    text-decoration: none;
+    font-size: 22px;
+	height: 60px;
+	width: 60px;
+	opacity: 1;
+	z-index: 3;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.home .carousel-control-next:hover, 
+.home .carousel-control-prev:hover{
+   box-shadow: 0 0 10px #ffffff;
+}
+.home .carousel-control-next{
+	right: -90px;
+}
+.home .carousel-control-prev{
+	left: -90px;
+}
+/*responsive*/
+@media(max-width: 767px){
+  .home .carousel-item{
+    margin-top: 18px;
+  }
+  .home .carousel-control-next, 
+  .home .carousel-control-prev{
+  	display: none;
+  }
+  .home .carousel-item h2{
+  	font-size: 45px;
+  }
+  .home .carousel-item p{
+  	font-size: 18px;
+  }
+}

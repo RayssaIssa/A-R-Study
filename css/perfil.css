@@ -1,0 +1,369 @@
+.home-section{
+  padding-top: 20px;
+}
+/* ---------------------------------------------- Card profile --------------------------------------- */
+.conteudo img {
+    max-width: 100%;
+    display: block;
+  }
+  .conteudo ul {
+    list-style: none;
+  }
+body{
+  overflow-x: hidden;
+}
+/* Utilities */
+.cards{
+  margin: 0 25%;
+}
+
+.card::after,
+.card img {
+  border-radius: 50%;
+}
+body,
+.card,
+.stats {
+  display: flex;
+}
+.card {
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  background-color: var(--white-color);
+  max-width: 500px;
+  box-shadow: 0 0 30px var(--sombra);
+  margin: 1rem;
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+.card::before {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--grey-color-light);
+  border-radius: 10px;
+  top: -.7rem;
+  left: -.7rem;
+}
+.card::after {
+  height: 15rem;
+  width: 15rem;
+  background-color: #4070f4;
+  top: -8rem;
+  right: -8rem;
+  box-shadow: 2rem 6rem 0 -3rem var(--quase-branco);
+}
+.card img {
+  width: 160px;
+  height: 160px;
+  min-width: 80px;
+  max-width: 200px;
+  min-height: 80px;
+  max-height: 200px;
+  box-shadow: 0 0 0 2px #fff;
+  object-fit: fill;
+}
+.infos {
+  margin-left: 1.5rem;
+}
+.name {
+  margin-bottom: 1rem;
+}
+.name h2 {
+  font-size: 1.4rem;
+  color: var(--letra);
+}
+.name h4 {
+  font-size: 1rem;
+  color: var(--letra);
+}
+.text {
+  font-size: .9rem;
+  color: var(--letra);
+  margin-bottom: 1rem;
+}
+.links button {
+  font-family: 'Poppins', sans-serif;
+  min-width: 120px;
+  padding: .5rem;
+  border: 1px solid;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .25s linear;
+}
+.links .follow,
+.links .view:hover {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+.links .view,
+.links .follow:hover{
+  background-color: var(--white-color);
+  color: var(--blue-color);
+}
+@media screen and (max-width: 450px) {
+  .card {
+    display: block;
+  }
+  .cards{
+    margin: 0;
+  }
+  .infos {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  .links button {
+    min-width: 100px;
+  }
+}
+/* -------------------------- Modal de exclusão de perfil --------------------------- */
+.apagar section {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #e3f2fd;
+}
+.apagar button {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  padding: 14px 22px;
+  border: none;
+  background: var(--blue-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.apagar a{
+  text-decoration: none;
+  color: #fff;
+}
+.modal-box button:hover {
+  background-color: var(--blue-color);
+}
+.apagar button.show-modal,
+.modal-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+section.active .show-modal {
+  display: none;
+}
+.overlay {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 101;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+section.active .overlay {
+  opacity: 1;
+  pointer-events: none;
+}
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  align-items: center;
+  max-width: 380px;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 24px;
+  background-color: var(--white-color);
+  opacity: 0;
+  box-shadow: 0 0 30px var(--sombra);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-box h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--letra);
+}
+.modal-box h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--letra);
+  text-align: center;
+}
+.modal-box .buttons {
+  margin-top: 25px;
+}
+.modal-box button {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 0 10px;
+}
+.modal-box i {
+  font-size: 70px;
+  color: var(--blue-color);
+}
+/* --------------------------- Modal edição de perfil ---------------------- */
+/* Home */
+.home::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+.home.show::before {
+  opacity: 1;
+  pointer-events: auto; 
+}
+/* From */
+.form_container {
+  position: fixed;
+  margin-top: 20px;
+  max-width: 350px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: var(--white-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px var(--sombra);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+.home.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.form_container.active .login_form {
+  display: none;
+}
+.form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: var(--letra);
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.input_box {
+  position: relative;
+  margin-top: 25px;
+  width: 100%;
+  height: 40px;
+}
+.input_box input {
+  height: 100%;
+  background: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: var(--letra);
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+.input_box input:focus {
+  border-color: var(--blue-color);
+}
+.input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--grey-color-light);
+}
+.input_box i.email,
+.input_box i.password {
+  left: 0;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password {
+  color: var(--blue-color);
+}
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+.form_container a:hover {
+  text-decoration: underline;
+}
+.form_container .button {
+  background: var(--blue-color);
+  color: #fff;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.login_signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+/* Titulo */
+.form .title{
+  position: relative;
+  font-size: 27px;
+  color: var(--letra);
+  font-weight: 600;
+}
+.form .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: var(--blue-color);
+  border-radius: 25px;
+}
+/* Input type file */
+.elementor-field-type-upload label + input {
+  display: none;
+}
+.elementor-field-type-upload label{
+  background-color: var(--blue-color);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 50px;
+  width: 100%;
+  cursor: pointer;
+}
+.elementor-field-type-upload label:hover{
+  background-color: #4167cf;
+  transition: .3s;
+}
+.elementor-field-type-upload p{
+  margin-top: 10px;
+  color: var(--letra);
+  font-size: 13px;
+  text-align: center;
+}
