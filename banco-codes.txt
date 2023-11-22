@@ -1,0 +1,31 @@
+create schema study;
+
+use study;
+
+create table users(
+id int primary key auto_increment,
+username varchar(200) not null unique,
+biografia varchar(200),
+email varchar(200) not null unique,
+password_hash varchar(255) not null,
+foto VARCHAR(255),
+statu varchar(255) NOT NULL,
+unique_id int(255) NOT NULL
+);
+
+CREATE TABLE `notas` (
+  `idnotas` INT NOT NULL AUTO_INCREMENT,
+  `titulo` VARCHAR(50) NOT NULL,
+  `descricao` VARCHAR(5000),
+  `importancia` TINYINT NOT NULL,
+  `cor` VARCHAR(15) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`idnotas`)
+);
+
+CREATE TABLE `messages` (
+  `msg_id` PRIMARY KEY int(11) NOT NULL AUTO_INCREMENT,
+  `incoming_msg_id` int(255) NOT NULL,
+  `outgoing_msg_id` int(255) NOT NULL,
+  `msg` varchar(1000) NOT NULL
+);
